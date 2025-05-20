@@ -85,7 +85,7 @@ h1 {
 }
 
 .responsive-navigation { 
- 	background: #3cb04a; 
+ 	background: #ff0000; 
 	float: left; 
 	padding: 10px 0px; 
 	margin-bottom: 30px;
@@ -124,7 +124,7 @@ a.menu-toggle-btn {
  	color: white; 
 	text-transform: uppercase; 
 	display: block; 
-	background-color: #3cb04a; 
+	background-color: #ff0000; 
 	-webkit-transition: all 150ms ease-in; 
 	-moz-transition: all 150ms ease-in; 
 	-o-transition: all 150ms ease-in; 
@@ -132,7 +132,7 @@ a.menu-toggle-btn {
 }
 
 .main_menu div.col-md-2 a:hover { 
-	background-color: #1c8b2a; 
+	background-color: #b20000; 
 }
 
 .main_menu div.col-md-2 a#prev { 
@@ -466,7 +466,7 @@ a.menu_toggle-btn i {
 }
 
 .templatemo_footer { 
-	background: #3cb04b; 
+	background: #ff0000; 
 	margin-top: 50px; 
 	padding: 10px 0px; 
 	text-align: center; 
