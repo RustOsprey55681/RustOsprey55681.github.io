@@ -538,10 +538,12 @@ a.menu_toggle-btn i {
 	}
 	.templatemo_imagecontrol .gallery-item .overlay a{ 
  top: 20%;}
-	.templatemo_imagecontrol2 .gallery-item .overlay a{ 
- left: 20%;}
 	.templatemo_address	{ 
  margin-top: 0px;}
+
+/* Just messing around */
+
+
 
  }
  
@@ -566,7 +568,13 @@ a.menu_toggle-btn i {
 	.templatemo_imagecontrol .gallery-item .overlay a { 
 	top: 22%;
 	}
-	.templatemo_imagecontrol2 .gallery-item .overlay a { 
-	left: 22%;
+	
+	.templatemo_imagecontrol_alt { 
+	height: 195px; 
+	overflow: hidden;
 	}
+	.templatemo_imagecontrol_alt .gallery-item .overlay a { 
+	top: 22%;
+	}
+	
  }
