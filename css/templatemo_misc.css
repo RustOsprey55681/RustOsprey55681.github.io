@@ -531,6 +531,34 @@ body.blurred > * {
   background-image: url("../images/close.png");
 }
 
+.lightbox-zoom {
+  position: absolute;
+  right: 30px;
+  top: 75px;
+  z-index: 9999;
+}
+
+.lightbox-zoom .lightbox-button {
+  position: relative;
+  right: auto;
+  top: auto;
+  display: inline-block;
+  margin-left: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font: bold 24px/30px Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.lightbox-zoom .lightbox-button:hover,
+.lightbox-zoom .lightbox-button:focus {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .lightbox-next {
   right: 30px;
   top: 48%;

@@ -31,6 +31,7 @@
             current: null,
             locked: false,
             caption: null,
+			zoomLevel: 1,
 			
             init: function (items) {
                 plugin.items = items;
@@ -40,6 +41,10 @@
                     $('body').append(
                       '<div id="lightbox" style="display:none;">'+
                       '<a href="#" class="lightbox-close lightbox-button"></a>' +
+                      '<div class="lightbox-zoom">' +
+                      '<a href="#" class="lightbox-zoom-out lightbox-button" aria-label="Zoom out" title="Zoom out">-</a>' +
+                      '<a href="#" class="lightbox-zoom-in lightbox-button" aria-label="Zoom in" title="Zoom in">+</a>' +
+                      '</div>' +
                       '<div class="lightbox-nav">'+
                       '<a href="#" class="lightbox-previous lightbox-button"></a>' +
                       '<a href="#" class="lightbox-next lightbox-button"></a>' +
@@ -107,6 +112,8 @@
                     iHeight = wHeight;
                     iWidth = Math.round(iWidth * ratio);
                 }
+				iWidth = Math.round(iWidth * plugin.zoomLevel);
+				iHeight = Math.round(iHeight * plugin.zoomLevel);
 
                 plugin.image.width(iWidth).height(iHeight).css({
 						'top': ($(window).height() - plugin.image.outerHeight()) / 2 + 'px',
@@ -152,6 +159,7 @@
                     var self = $(this)[0];
                     e.preventDefault();
                     plugin.current = self;
+					plugin.zoomLevel = 1;
                     plugin.loadImage();
 
                     // Bind Keyboard Shortcuts
@@ -187,6 +195,22 @@
                 // Next click
                 $(plugin.lightbox).on('click', '.lightbox-next', function () {
                     plugin.next();
+                    return false;
+                });
+
+                $(plugin.lightbox).on('click', '.lightbox-zoom-in', function () {
+                    if (plugin.image) {
+                        plugin.zoomLevel = Math.min(plugin.zoomLevel + 0.25, 3);
+                        plugin.resizeImage();
+                    }
+                    return false;
+                });
+
+                $(plugin.lightbox).on('click', '.lightbox-zoom-out', function () {
+                    if (plugin.image) {
+                        plugin.zoomLevel = Math.max(plugin.zoomLevel - 0.25, 0.5);
+                        plugin.resizeImage();
+                    }
                     return false;
                 });
 
