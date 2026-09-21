@@ -54,8 +54,6 @@ jQuery(document).ready(function($){
 		$(".main_menu a.templatemo_page2, .responsive_menu a.templatemo_page2").removeClass('active');
 		$(".main_menu a.templatemo_page3, .responsive_menu a.templatemo_page3").removeClass('active');
 		$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").removeClass('active');
-		
-		loadScript();
 		return false;
 	});
 
@@ -92,23 +90,6 @@ jQuery(document).ready(function($){
 });
 
 
-function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-      'callback=initialize';
-  document.body.appendChild(script);
-}
-
-function initialize() {
-    var mapOptions = {
-      zoom: 15,
-      center: new google.maps.LatLng(16.8496189,96.1288854)
-    };
-    var map = new google.maps.Map(document.getElementById('templatemo_map'),  mapOptions);
-}
-
-
 /*----------------- Previous Next button ---------------------- */
 $(window).load(function(){
 $(document).ready(function(){				   
@@ -117,8 +98,7 @@ $(document).ready(function(){
             $(this).hide();
     });
     
-    $("#next").click(function(){
-			loadScript();
+	$("#next").click(function(){
         if ($(".divs div.content:visible").next().length != 0)
             $(".divs div.content:visible").next().addClass("animated fadeInDown").show().prev().hide() ;
         else {
@@ -129,8 +109,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $("#prev").click(function(){
-				loadScript();				  
+	$("#prev").click(function(){
         if ($(".divs div.content:visible").prev().length != 0)
             $(".divs div.content:visible").prev().addClass("animated fadeInDown").show().next().hide();
         else {
